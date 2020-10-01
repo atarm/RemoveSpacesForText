@@ -1,2 +1,4 @@
-# RemoveSpacesForText
-Remove spaces for text.
+# テキスト内の指定文字列削除（スペース,etc)
+## 使い方
+1. GUI左側に整形したいテキストをコピペ
+1. 右側に整形後のテキストが出力
