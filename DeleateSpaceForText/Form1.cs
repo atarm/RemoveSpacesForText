@@ -16,14 +16,14 @@ namespace DeleateSpaceForText
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void text1_TextChanged(object sender, EventArgs e)
         {
             string prevText = richTextBox1.Text;
             string rgx = @"https?://(?:[!-~]+\.)+[!-~]+";
-            richTextBox2.Text = Regex.Replace(prevText, rgx, String.Empty) // 以下のようにReplaceは複数指定可能
+            // 削除する文字列
+            richTextBox2.Text = Regex.Replace(prevText, rgx, String.Empty)
                 .Replace("\n", String.Empty)
                 .Replace(".", String.Empty)
                 .Replace("(", String.Empty)
@@ -42,6 +42,7 @@ namespace DeleateSpaceForText
                 .Replace("♪", "。")
                 .Replace("/",String.Empty)
                 .Replace(":",String.Empty);
+            // 削除結果をクリップボードに設定
             Clipboard.SetText(prevText.Replace(",","\n"));
         }
     }
